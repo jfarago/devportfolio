@@ -131,29 +131,14 @@ body {
     }
 }
 
-@keyframes dropHeader {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
 header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: fixed;
+    width: 100%;
     text-align: center;
-    z-index: 10;
-    animation-name: dropHeader;
-    animation-iteration-count: 1;
-    animation-timing-function: ease;
-    animation-duration: 0.75s;
+    z-index: 10000;
 
     ul {
-        display: inline-block;
+        display: block;
         background: $background;
         text-align: center;
         padding: 10px;
@@ -236,7 +221,11 @@ header {
 }
 
 footer {
-    padding: 50px 0;
+    padding: 25px 0;
+
+    p {
+        text-align: center;
+    }
 }
 
 .copyright {
@@ -877,7 +866,7 @@ footer {
         height: auto;
         min-height: auto;
         max-height: auto;
-        padding: 100px 15px;
+        padding: 150px 15px;
     }
 
     #lead-content {
