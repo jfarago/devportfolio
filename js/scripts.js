@@ -24,10 +24,11 @@
         e.preventDefault();
         var heading = $(this).attr('href');
         var scrollDistance = $(heading).offset().top;
-
+        var scrollSpeed = Math.abs(window.pageYOffset - $(heading).offset().top) / 3;
+        scrollSpeed = (scrollSpeed > 1000) ? 1000 : scrollSpeed;
       $('html, body').animate({
             scrollTop: scrollDistance + 'px'
-        }, Math.abs(window.pageYOffset - $(heading).offset().top) / 5);
+        }, scrollSpeed);
 
 
         // Hide the menu once clicked if mobile
